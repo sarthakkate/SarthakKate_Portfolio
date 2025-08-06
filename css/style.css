@@ -1,0 +1,30 @@
+/* Custom CSS for background animation */
+@keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes gradient-move-reverse {
+    0% { background-position: 100% 50%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+.animate-gradient-move {
+    background-size: 400% 400%;
+    animation: gradient-move 30s ease infinite;
+}
+.animate-gradient-move-reverse {
+    background-size: 400% 400%;
+    animation: gradient-move-reverse 30s ease infinite;
+}
+
+/* Custom CSS for fade-in-out text animation */
+.fade-in-out {
+    animation: fadeInOut 3s infinite;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarthak Kate - Portfolio</title>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS CDN for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="relative min-h-screen bg-gray-900 text-gray-100 font-inter">
+    <!-- The 'overflow-hidden' class has been removed from the body tag -->
+
+    <!-- Dynamic Background Overlay -->
+    <div class="absolute inset-0 z-0 opacity-20 animate-gradient-move">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-pink-900"></div>
+        <div class="absolute inset-0 bg-gradient-to-l from-green-900 via-yellow-900 to-red-900 animate-gradient-move-reverse"></div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="relative z-10 bg-gray-800 shadow-lg p-4 sticky top-0 rounded-b-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-400">Sarthak Kate</h1>
+            <div class="space-x-4">
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Projects</a>
+                <a href="#experience" class="text-gray-300 hover:text-blue-400 transition duration-300">Experience</a>
+                <a href="#code-sandbox" class="text-gray-300 hover:text-blue-400 transition duration-300">Code Sandbox</a>
+                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 container mx-auto px-4 py-8">
+
+        <!-- Hero/About Me Section -->
+        <section id="about" class="text-center py-16 bg-gray-800 rounded-xl shadow-lg mb-12">
+            <h2 class="text-4xl font-extrabold text-blue-400 mb-4">Sarthak Kate</h2>
+            <div class="h-8 mb-6 flex justify-center items-center">
+                <span id="dynamic-word-span" class="text-xl text-gray-300 font-semibold fade-in-out"></span>
+            </div>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                A quick learner with strong communication and project management skills, passionate about building innovative solutions.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a
+                    href="https://github.com/sarthakkate"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105"
+                >
+                    GitHub
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/sarthak-kate/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 transform hover:scale-105"
+                >
+                    LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-12 bg-gray-800 rounded-xl shadow-lg mb-12 p-8">
+            <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-3">Languages</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Python</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-3">Technologies & Concepts</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>NodeJS, ExpressJS</li>
+                        <li>React</li>
+                        <li>Generative AI, AI & Machine Learning, Data Science</li>
+                        <li>DBMS, Data Structures & Algorithms</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-200 mb-3">Databases</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-12 bg-gray-800 rounded-xl shadow-lg mb-12 p-8">
+            <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-container">
+                <!-- Projects will be dynamically loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-12 bg-gray-800 rounded-xl shadow-lg mb-12 p-8">
+            <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Experience</h2>
+            <div class="relative border-l-4 border-blue-500 pl-6">
+                <div class="mb-8">
+                    <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2 top-1 border-2 border-gray-900"></div>
+                    <h3 class="text-xl font-semibold text-gray-200">Web Developer Intern</h3>
+                    <p class="text-blue-300">Cubics Software Solutions | Jan 09, 2025 - Mar 10, 2025</p>
+                    <ul class="list-disc list-inside text-gray-300 mt-2">
+                        <li>Gained hands-on experience in front-end development by building responsive and interactive web applications.</li>
+                        <li>Worked with HTML, CSS, JavaScript, Bootstrap, and React to create user-friendly interfaces.</li>
+                        <li>Integrated RESTful APIs to fetch and display dynamic data efficiently.</li>
+                        <li>Used Git and GitHub for version control and collaborative development.</li>
+                        <li>Designed and optimized SQL queries involving CTEs, window functions, subqueries, and stored procedures.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Snippet Generator Section -->
+        <section id="code-sandbox" class="py-12 bg-gray-800 rounded-xl shadow-lg p-8">
+            <h2 class="text-3xl font-bold text-blue-400 mb-8 text-center">Code Snippet Generator</h2>
+            <p class="text-gray-300 mb-6 text-center">
+                Need a quick code snippet? Describe what you need (e.g., 'Python function to reverse a string', 'JavaScript debounce function') and let AI generate it!
+            </p>
+            <div class="flex flex-col items-center">
+                <textarea
+                    id="ai-prompt"
+                    class="w-full md:w-3/4 lg:w-1/2 p-4 mb-4 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
+                    rows="8"
+                    placeholder="e.g., Python function to calculate factorial recursively"
+                ></textarea>
+                <button
+                    id="generate-ai-response-btn"
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 transform hover:scale-105"
+                >
+                    Generate Code Snippet
+                </button>
+                <div id="ai-response-display" class="w-full md:w-3/4 lg:w-1/2 mt-8 p-6 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg shadow-inner min-h-[200px] whitespace-pre-wrap overflow-auto">
+                    Type something and click "Generate Code Snippet"!
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 bg-gray-800 rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-400 mb-4">Get In Touch</h2>
+            <p class="text-gray-300 mb-8">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="bg-gray-700 p-8 rounded-lg shadow-md max-w-md mx-auto">
+                <div class="mb-4">
+                    <p class="text-gray-200 font-semibold text-lg">Email</p>
+                    <a href="mailto:katesarthak26@gmail.com" class="text-blue-300 hover:underline">katesarthak26@gmail.com</a>
+                </div>
+                <div class="mb-4">
+                    <p class="text-gray-200 font-semibold text-lg">Phone</p>
+                    <a href="tel:+918888749134" class="text-blue-300 hover:underline">+91-8888749134</a>
+                </div>
+                <div>
+                    <p class="text-gray-200 font-semibold text-lg">Location</p>
+                    <p class="text-gray-300">Pune, Maharashtra, India</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-gray-800 text-gray-400 text-center p-6 mt-12 rounded-t-lg">
+        <p>&copy; <span id="current-year"></span> Sarthak Kate. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>
