@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateAiResponseBtn = document.getElementById('generate-ai-response-btn');
     const aiResponseDisplay = document.getElementById('ai-response-display');
 
-    const GOOGLE_CLOUD_API_KEY = "AIzaSyCayZAXaxw8z4tz1qpQ979gxPun8Wi-b30";
+    const GOOGLE_CLOUD_API_KEY = "";
 
     if (generateAiResponseBtn && aiPromptInput && aiResponseDisplay) {
         generateAiResponseBtn.addEventListener('click', async () => {
