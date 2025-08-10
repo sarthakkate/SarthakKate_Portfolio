@@ -1,4 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Menu Toggle Logic ---
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const navLinks = document.getElementById('nav-links');
+
+    if (mobileMenuButton && navLinks) {
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-full');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-gray-800');
+            navLinks.classList.toggle('shadow-lg');
+            navLinks.classList.toggle('py-4');
+            navLinks.classList.toggle('items-center');
+            navLinks.classList.toggle('space-y-4');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!navLinks.classList.contains('hidden')) {
+                    navLinks.classList.add('hidden');
+                    navLinks.classList.remove('flex', 'absolute', 'top-full', 'left-0', 'w-full', 'bg-gray-800', 'shadow-lg', 'py-4', 'items-center', 'space-y-4');
+                }
+            });
+        });
+    }
+
+    // --- Dynamic Words Logic ---
     const dynamicWords = ["Professional Coder", "Developer", "ML Engineer", "AI Integrator"];
     let currentWordIndex = 0;
     const dynamicWordSpan = document.getElementById('dynamic-word-span');
@@ -13,18 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
     updateDynamicWord();
     setInterval(updateDynamicWord, 3000);
 
+    // --- Projects Data & Rendering ---
     const projectData = [
+        {
+            name: 'Digital Cafe Menu & Ordering System',
+            techStack: 'HTML, CSS, JavaScript, Python, Vercel, GitHub',
+            description: 'Developed a responsive web application for a cafe using a single-page model, enabling customers to scan a QR code to view the menu, place an order, and request assistance. Integrated a Python script for automated generation of unique, table-specific QR codes, and included a direct WhatsApp integration for order submission.',
+            github: 'https://github.com/sarthakkate/Digital-Cafe-Menu-and-Ordering-System'
+        },
         {
             name: 'DevConnect - Developer Portfolio + Blog Platform',
             techStack: 'React (Vite), Firebase, Tailwind CSS',
             description: 'Designed and built a responsive platform for developers to showcase portfolios and publish tech blogs. Created dynamic sections for projects, skills, and social profiles. Implemented Markdown support for writing and managing blogs.',
-            github: 'https://github.com/sarthakkate'
+            github: 'https://github.com/sarthakkate/DevConnect'
         },
         {
             name: 'AI Resume Builder',
             techStack: 'React (Vite), Gemini API, Firebase, Tailwind CSS, React-PDF',
             description: 'Built an AI-enhanced resume builder with real-time editing and PDF download functionality. Integrated Gemini API to generate resume content suggestions and grammar improvements. Designed dark-themed, responsive UI with accessible form sections.',
-            github: 'https://github.com/sarthakkate/AI Resume Builder'
+            github: 'https://github.com/sarthakkate/AI-Resume-Builder'
         },
         {
             name: 'Stock Market Prediction using HMM',
@@ -36,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectsContainer = document.getElementById('projects-container');
     if (projectsContainer) {
+        projectsContainer.innerHTML = ''; // Clear existing content
         projectData.forEach(project => {
             const projectCard = document.createElement('div');
             projectCard.className = 'bg-gray-700 p-6 rounded-lg shadow-md flex flex-col justify-between';
@@ -59,11 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- AI Code Snippet Generator Logic ---
     const aiPromptInput = document.getElementById('ai-prompt');
     const generateAiResponseBtn = document.getElementById('generate-ai-response-btn');
     const aiResponseDisplay = document.getElementById('ai-response-display');
 
-    const GOOGLE_CLOUD_API_KEY = "";
+    // IMPORTANT: Replace "YOUR_GOOGLE_CLOUD_API_KEY_HERE" with your actual Google Cloud API Key
+    // You can get one from the Google Cloud Console: https://console.cloud.google.com/apis/credentials
+    const GOOGLE_CLOUD_API_KEY = "YOUR_GOOGLE_CLOUD_API_KEY_HERE";
 
     if (generateAiResponseBtn && aiPromptInput && aiResponseDisplay) {
         generateAiResponseBtn.addEventListener('click', async () => {
@@ -139,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Footer Year ---
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
