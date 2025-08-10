@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Digital Cafe Menu & Ordering System',
             techStack: 'HTML, CSS, JavaScript, Python, Vercel, GitHub',
             description: 'Developed a responsive web application for a cafe using a single-page model, enabling customers to scan a QR code to view the menu, place an order, and request assistance. Integrated a Python script for automated generation of unique, table-specific QR codes, and included a direct WhatsApp integration for order submission.',
-            github: 'https://github.com/sarthakkate/DigitalCafeMenu',
+            github: 'https://github.com/sarthakkate/DigitalCafeMenu'
             // live: 'https://digital-cafe-menu.vercel.app' // Placeholder Vercel link
         },
         {
