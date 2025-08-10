@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             name: 'Digital Cafe Menu & Ordering System',
             techStack: 'HTML, CSS, JavaScript, Python, Vercel, GitHub',
             description: 'Developed a responsive web application for a cafe using a single-page model, enabling customers to scan a QR code to view the menu, place an order, and request assistance. Integrated a Python script for automated generation of unique, table-specific QR codes, and included a direct WhatsApp integration for order submission.',
-            github: 'https://github.com/sarthakkate/Digital-Cafe-Menu-and-Ordering-System'
+            github: 'https://github.com/sarthakkate/Digital-Cafe-Menu-and-Ordering-System',
+            live: 'https://digital-cafe-menu.vercel.app' // Placeholder Vercel link
         },
         {
             name: 'DevConnect - Developer Portfolio + Blog Platform',
@@ -83,15 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="text-sm text-blue-300 mb-3">${project.techStack}</p>
                     <p class="text-gray-300 text-sm mb-4">${project.description}</p>
                 </div>
-                ${project.github ? `
-                <a
-                    href="${project.github}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-block bg-gray-600 hover:bg-gray-500 text-white text-sm font-bold py-2 px-4 rounded-lg self-end transition duration-300"
-                >
-                    View on GitHub
-                </a>` : ''}
+                <div class="flex space-x-2 mt-4 self-end">
+                    ${project.github ? `
+                    <a
+                        href="${project.github}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-gray-600 hover:bg-gray-500 text-white text-sm font-bold py-2 px-4 rounded-lg self-end transition duration-300"
+                    >
+                        View on GitHub
+                    </a>` : ''}
+                    ${project.live ? `
+                    <a
+                        href="${project.live}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-lg self-end transition duration-300"
+                    >
+                        View Live
+                    </a>` : ''}
+                </div>
             `;
             projectsContainer.appendChild(projectCard);
         });
